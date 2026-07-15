@@ -1,0 +1,432 @@
+/* ===================================
+   リセット
+=================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+/* ===================================
+   全体
+=================================== */
+
+.game {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===================================
+   上側（水色）
+=================================== */
+
+.top {
+  width: 100%;
+  height: 35vh;
+  background: #b9e8ff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.townImage {
+  position: relative;
+
+  width: 350px;
+
+  max-width: 80%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-end;
+}
+
+.house {
+  width: 260px;
+  display: block;
+}
+
+.boy {
+  width: 120px;
+  display: block;
+  margin-left: -40px;
+  transform: translateY(12px);
+}
+
+/* ===================================
+   下側（緑）
+=================================== */
+
+.bottom {
+  flex: 1;
+
+  background: #b8e7a8;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 20px;
+}
+
+/* ===================================
+   タイトル
+=================================== */
+
+h1 {
+  color: #2d5a32;
+  font-size: clamp(28px, 4vw, 50px);
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+/* ===================================
+   説明
+=================================== */
+
+.description {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+/* ===================================
+   入力欄
+=================================== */
+
+.inputArea {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input {
+  width: 300px;
+  max-width: 90%;
+
+  padding: 12px;
+
+  font-size: 17px;
+
+  border-radius: 10px;
+  border: 2px solid #666;
+
+  margin-bottom: 20px;
+}
+
+/* ===================================
+   ボタン
+=================================== */
+
+button {
+  width: 260px;
+  max-width: 90%;
+
+  padding: 14px;
+
+  font-size: 18px;
+
+  color: white;
+
+  background: #4caf50;
+
+  border: none;
+
+  border-radius: 30px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* ===================================
+   問題画面
+=================================== */
+
+.status {
+  width: 100%;
+  max-width: 500px;
+
+  display: flex;
+
+  justify-content: space-around;
+
+  margin-bottom: 20px;
+
+  font-size: 18px;
+
+  font-weight: bold;
+}
+
+.question {
+  font-size: 26px;
+
+  margin: 25px 0;
+
+  line-height: 1.4;
+}
+
+.choice {
+  margin: 10px 0;
+}
+/* ===================================
+   選択結果（増減表示）
+=================================== */
+
+.choiceResult {
+  font-size: 24px;
+
+  font-weight: bold;
+
+  color: #2d5a32;
+
+  margin: 20px 0;
+}
+
+.statusChange {
+  width: 100%;
+
+  max-width: 450px;
+
+  margin: 20px auto;
+
+  text-align: left;
+
+  font-size: 22px;
+
+  line-height: 2;
+}
+
+.statusChange p {
+  margin: 8px 0;
+}
+
+/* 増減の色 */
+
+.plus {
+  color: #2e7d32;
+
+  font-weight: bold;
+}
+
+.minus {
+  color: #d32f2f;
+
+  font-weight: bold;
+}
+
+.zero {
+  color: #666;
+
+  font-weight: bold;
+}
+
+/* ===================================
+   結果画面
+=================================== */
+
+.resultTitle {
+  font-size: 32px;
+
+  color: #2d5a32;
+
+  margin-bottom: 15px;
+}
+
+.resultImage {
+  width: 300px;
+
+  max-width: 80%;
+
+  height: auto;
+
+  margin: 20px auto;
+
+  display: block;
+
+  border-radius: 15px;
+}
+
+.result {
+  font-size: 20px;
+
+  line-height: 1.8;
+
+  margin-top: 20px;
+}
+
+.result strong {
+  font-size: 28px;
+}
+
+/* ===================================
+   エンディング画像
+=================================== */
+
+#top.result {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+#top.result img {
+  width: 320px;
+
+  max-width: 80%;
+}
+
+/* ===================================
+   スマホ対応
+=================================== */
+
+@media screen and (max-width: 768px) {
+  .top {
+    height: 38vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+
+    padding-bottom: 10px;
+  }
+
+  .house {
+    width: 180px;
+  }
+
+  .boy {
+    width: 80px;
+
+    margin-left: -25px;
+
+    transform: translateY(8px);
+  }
+
+  .townImage {
+    width: 260px;
+
+    max-width: 90%;
+  }
+
+  .bottom {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+
+  .question {
+    font-size: 22px;
+  }
+
+  .status {
+    flex-direction: column;
+
+    gap: 8px;
+
+    font-size: 17px;
+  }
+
+  button {
+    width: 95%;
+
+    font-size: 17px;
+  }
+
+  .resultTitle {
+    font-size: 26px;
+  }
+
+  .result {
+    font-size: 17px;
+  }
+
+  .result strong {
+    font-size: 24px;
+  }
+
+  .statusChange {
+    font-size: 18px;
+  }
+
+  .resultImage {
+    width: 220px;
+  }
+}
+
+/* ===================================
+   PCでは少し大きく
+=================================== */
+
+@media screen and (min-width: 1200px) {
+  .question {
+    font-size: 30px;
+  }
+
+  .description {
+    font-size: 20px;
+  }
+
+  button {
+    width: 320px;
+
+    font-size: 20px;
+  }
+
+  .status {
+    font-size: 20px;
+  }
+}
+
+.questionText {
+  font-size: 26px;
+
+  line-height: 1.4;
+
+  margin: 10px 0 20px;
+}

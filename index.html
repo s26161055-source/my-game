@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>人口をふやせ！まちづくりプロジェクト</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="game">
+      <!-- 上側（水色・画像エリア） -->
+      <div class="top" id="top">
+        <img src="building_house1.png" class="house" alt="家" />
+
+        <img src="boy04_cry.png" class="boy" alt="男の子" />
+      </div>
+
+      <!-- 下側（ゲーム画面） -->
+      <div class="bottom" id="screen">
+        <h1>
+          人口をふやせ！<br />
+          まちづくりプロジェクト
+        </h1>
+
+        <p class="description">
+          人口減少によって活気を失った町を住みたくなる町に！
+        </p>
+
+        <div class="inputArea">
+          <label for="name">あなたの名前</label>
+
+          <input
+            type="text"
+            id="name"
+            placeholder="名前を入力してください"
+            maxlength="10"
+          />
+
+          <button id="start">ゲーム開始</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
